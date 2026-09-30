@@ -1,0 +1,12 @@
+# baostock — 免费开源 A 股数据平台 (https://baostock.com), 无需注册/Key。
+# 走自有 TCP 协议 (非 HTTP), 无需代理处理。日K/除权因子为强项。
+
+name: baostock
+display_name: "baostock"
+runtime: python
+entry: app.plugins.baostock.provider:BaostockProvider
+check: app.plugins.baostock.provider:availability
+datasets: [daily, adj_factor]
+description: "免费开源 A 股数据源(baostock, 无需注册/Key)。日K(不复权原始价)、除权因子(官方分红送配数据推导)。作为 akshare 之外的可靠备选源。实时/分钟/盘口/财务未接入。"
+install_hint: "点击安装依赖(baostock),或手动: uv pip install --python .venv/Scripts/python.exe baostock"
+homepage: "https://baostock.com"

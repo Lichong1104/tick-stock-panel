@@ -1,0 +1,13 @@
+# akshare — 免费 A 股数据源 (新浪/腾讯), 纯 Python 无本地客户端。
+# 东财(push2his.eastmoney.com)在本网络不可达, 统一走新浪/腾讯接口。
+# 无 api_key_env: 无需任何 Key 或账号。
+
+name: akshare
+display_name: "akshare"
+runtime: python
+entry: app.plugins.akshare.provider:AkshareProvider
+check: app.plugins.akshare.provider:availability
+datasets: [realtime, daily, minute, adj_factor, depth5, financial]
+description: "免费 A 股数据源(新浪/腾讯/巨潮)。实时全市场快照、日K(不复权原始价,逐标的)、分钟K(近期,逐标的)、除权因子(巨潮分红送配推导)、五档盘口(腾讯)、财务(新浪三表+指标摘要)。无需 API Key/账号。全量分钟未接入,自动回退 TickFlow。"
+install_hint: "点击安装依赖(akshare),或手动: uv pip install --python .venv/Scripts/python.exe akshare"
+homepage: "https://akshare.akfamily.xyz"
