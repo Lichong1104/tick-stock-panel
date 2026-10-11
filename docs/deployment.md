@@ -99,6 +99,14 @@ uv run uvicorn app.main:app --reload --port 3018
 cd frontend && pnpm install && pnpm dev   # http://localhost:3011
 ```
 
+### `uv sync` 与插件依赖(易踩)
+
+自定义数据源插件(akshare / baostock 等)的运行时依赖**不在 `uv.lock` 里**。因此每执行一次
+`uv sync`, 这些依赖都会被卸掉, 之后需要重新安装一次(与首次安装同一入口: 设置页插件安装,
+后端路由 `plugins/{name}/install`)。在干净环境首次安装时可能报
+`os error -2147024891`(Windows 瞬时文件锁), 这属于可重试情况——直接重跑 `uv sync` 即可,
+不代表环境损坏。
+
 ---
 
 ## 老 CPU 兼容(avx2/fma 缺失)
