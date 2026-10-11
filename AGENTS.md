@@ -10,3 +10,17 @@
 - 保持实现简单、改动范围最小，不处理无关问题。
 - 不覆盖工作区已有修改，不虚构测试或审查结果。
 - 以实际验证结果作为完成标准。
+
+## Agent skills
+
+### Issue tracker
+
+Issues and specs live as GitHub issues, driven by the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Five canonical triage roles, label strings equal to their names. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context. See `docs/agents/domain.md`.

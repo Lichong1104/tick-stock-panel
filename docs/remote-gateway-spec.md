@@ -2,7 +2,7 @@
 status: ready-for-agent
 derives-from: docs/remote-gateway-plan.md
 decision-record: D1–D7（见 docs/remote-gateway-plan.md §3）
-tracker: 未配置（需先运行 /mattpocock-skills:setup-matt-pocock-skills 才能发布到 issue tracker）
+tracker: GitHub Issues（Lichong1104/tick-stock-panel），已拆分为 #1–#14
 ---
 
 # Spec：远端网关 + Codex 插件
@@ -318,6 +318,7 @@ OAuth 必须按**公共客户端**设计（PKCE，或支持 DCR/CIMD），因为
 上游当前授予了什么，一个是设置页展示的能力路由矩阵。本 spec 提到的「能力矩阵」
 **一律**指后者。远端化会同时触碰两者，混用会让改动范围判断完全错掉。
 
-**文档位置。** 本 spec 落在 `docs/` 下，是因为仓库尚未配置 issue tracker
-（`/mattpocock-skills:setup-matt-pocock-skills` 未运行）。配置完成后应把本 spec
-发布为 tracker 上的 issue 并保留 `ready-for-agent` 标签，然后由 `/to-tickets` 拆分。
+**文档位置与拆分记录。** 本 spec 落在 `docs/` 下（设计记录同样，见 `remote-gateway-plan.md`）。
+issue tracker 已配置为 GitHub Issues，本 spec 已由 `/to-tickets` 拆分为 14 张票（`#1`–`#14`，
+均带 `ready-for-agent` 标签），各票之间的 native blocking 边已按依赖关系接好，frontier 为
+`#1` 与 `#2`。tracker 的操作约定见 `docs/agents/issue-tracker.md`。
